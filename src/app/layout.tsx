@@ -8,8 +8,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Moxie Test",
-  description: "Moxie Test",
+  title: "M T",
+  description: "M T",
 };
 
 export default function RootLayout({
