@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Card } from "./ui/card";
 import { ClinicCard } from "./clinic-card";
 import { ServicesCard } from "./services-card";
+import { scrollToTop } from "@/lib/utils";
 
 export function Confirmation() {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <div className="p-8">
       <div className="mx-auto flex max-w-screen-xl flex-col gap-2 pb-[100px] md:pb-0">
