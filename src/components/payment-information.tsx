@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "./ui/form";
 import { ClinicCard } from "./clinic-card";
+import { ServicesCard } from "./services-card";
 
 type Props = {
   initialData: PaymentFormData;
@@ -50,13 +51,14 @@ export function PaymentInformation({ initialData, onSubmit }: Props) {
 
   return (
     <div className="p-8">
-      <div className="mx-auto flex max-w-screen-xl flex-col gap-2 pb-[100px] md:pb-0">
+      <div className="mx-auto flex max-w-screen-xl flex-col gap-2">
         <h1 className="self-center text-lg font-bold md:self-auto md:pl-2">
           Book appointment
         </h1>
         <div className="flex flex-col justify-between gap-6 md:flex-row">
-          <div className="flex-1 md:max-w-[450px]">
+          <div className="flex flex-1 flex-col gap-6 md:max-w-[450px]">
             <ClinicCard />
+            <ServicesCard />
           </div>
           <div className="flex-1">
             <Card className="flex-1 bg-white p-8 md:m-0">

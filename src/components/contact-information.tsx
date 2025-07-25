@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "./ui/form";
 import { ClinicCard } from "./clinic-card";
+import { ServicesCard } from "./services-card";
 
 type Props = {
   initialData: ContactFormData;
@@ -51,15 +52,15 @@ export function ContactInformation({ initialData, onSubmit }: Props) {
           Book appointment
         </h1>
         <div className="flex flex-col justify-between gap-6 md:flex-row">
-          <div className="flex-1 md:max-w-[450px]">
+          <div className="flex flex-1 flex-col gap-6 md:max-w-[450px]">
             <ClinicCard />
+            <ServicesCard />
           </div>
           <div className="flex-1">
             <Card className="flex-1 bg-white p-8 md:m-0">
               <h3 className="text-mx-tile text-lg font-bold">
                 Enter your details below
               </h3>
-
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(handleSubmit)}
@@ -81,7 +82,6 @@ export function ContactInformation({ initialData, onSubmit }: Props) {
                       </FormItem>
                     )}
                   />
-
                   <FormField
                     control={form.control}
                     name="email"
@@ -99,7 +99,6 @@ export function ContactInformation({ initialData, onSubmit }: Props) {
                       </FormItem>
                     )}
                   />
-
                   <FormField
                     control={form.control}
                     name="phone"
@@ -117,7 +116,6 @@ export function ContactInformation({ initialData, onSubmit }: Props) {
                       </FormItem>
                     )}
                   />
-
                   <FormField
                     control={form.control}
                     name="visitReason"
@@ -140,8 +138,7 @@ export function ContactInformation({ initialData, onSubmit }: Props) {
           </div>
         </div>
       </div>
-
-      <div className="fixed right-0 bottom-0 left-0 bg-white p-4 shadow-lg">
+      <div className="fixed right-0 bottom-0 left-0 bg-white p-4 shadow-[0_4px_15px_var(--color-mx-shadow)]">
         <div className="mx-auto flex max-w-screen-xl justify-end">
           <Button
             className="w-full md:w-auto"

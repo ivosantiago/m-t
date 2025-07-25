@@ -15,6 +15,7 @@
   --color-mx-text-description: oklch(0.4933 0.019 285.68); /* #60606c */
   --color-mx-tile: oklch(0.1631 0.0162 261.49); /* #0A0E15 */
   --color-mx-violet-90: oklch(0.4654 0.196 323.5); /* #8A1D96 */
+  --color-mx-shadow: oklch(0.2645 0.0849 323.67 / 25%); /* #38133C 25% */
 
   /* 
    * end

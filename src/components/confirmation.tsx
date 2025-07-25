@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { ClinicCard } from "./clinic-card";
 import { Card } from "./ui/card";
+import { ClinicCard } from "./clinic-card";
+import { ServicesCard } from "./services-card";
 
 export function Confirmation() {
   return (
@@ -28,9 +29,11 @@ export function Confirmation() {
               </p>
             </Card>
           </div>
-
           <div className="w-full md:w-[542px]">
             <ClinicCard />
+          </div>
+          <div className="w-full md:w-[542px]">
+            <ServicesCard />
           </div>
         </div>
       </div>
