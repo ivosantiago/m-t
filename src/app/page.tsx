@@ -23,7 +23,8 @@ export type PaymentFormData = {
   cardNumber: string;
   expiryDate: string;
   cvv: string;
-  cardholderName: string;
+  billingZip: string;
+  agreeToCancellationPolicy: boolean;
 };
 
 export type CompleteFormData = {
@@ -46,7 +47,8 @@ export default function Home() {
       cardNumber: "",
       expiryDate: "",
       cvv: "",
-      cardholderName: "",
+      billingZip: "",
+      agreeToCancellationPolicy: false,
     },
   });
 
@@ -59,17 +61,13 @@ export default function Home() {
   };
 
   const handlePaymentSubmit = (paymentData: PaymentFormData) => {
-    setFormData((prev) => ({
-      ...prev,
+    const newFormData = {
+      ...formData,
       payment: paymentData,
-    }));
+    };
+    setFormData(newFormData);
+    console.log(newFormData);
     setStep(Steps.Confirmation);
-  };
-
-  const handleFinalSubmit = () => {
-    console.log("Complete form data:", formData);
-    // Here you can send the complete form data to your API
-    // or perform any final submission logic
   };
 
   return (
@@ -86,9 +84,7 @@ export default function Home() {
           onSubmit={handlePaymentSubmit}
         />
       )}
-      {step === Steps.Confirmation && (
-        <Confirmation formData={formData} onSubmit={handleFinalSubmit} />
-      )}
+      {step === Steps.Confirmation && <Confirmation />}
     </>
   );
 }
