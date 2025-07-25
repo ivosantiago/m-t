@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "./ui/card";
+import { formatDuration, formatPrice } from "@/lib/utils";
 
 const servicesMock = [
   {
@@ -15,19 +16,6 @@ const servicesMock = [
     price: "20000", // $200
   },
 ];
-
-const formatDuration = (duration: string) => {
-  const minutes = Math.floor(Number(duration) / 60 / 1000);
-  return `${minutes} mins`;
-};
-
-const formatPrice = (price: string) => {
-  return Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-  }).format(Math.floor(Number(price) / 100));
-};
 
 export function ServicesCard() {
   return (

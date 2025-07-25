@@ -15,6 +15,7 @@ const businessMock = {
   email: "goldspa@gmail.com",
   phone: "+11 123 4567 222",
 };
+
 export function ClinicCard() {
   return (
     <Card className="gap-6 bg-white p-4">
