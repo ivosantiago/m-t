@@ -4,6 +4,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* 
+   * Instead of adjusting shadcn/ui colors I'm creating my own for the exercise
+   * I'm also adding directly to the theme for simplicity
+   */
+
+  --color-mx-grey-20: oklch(0.9677 0.0027 286.35); /* #F4F4F6 */
+  --color-mx-text-dark: oklch(0.1881 0.006 285.81); /* #131316 */
+  --color-mx-text-additional: oklch(0.6314 0.0208 285.79); /* #888896 */
+  --color-mx-text-description: oklch(0.4933 0.019 285.68); /* #60606c */
+  --color-mx-tile: oklch(0.1631 0.0162 261.49); /* #0A0E15 */
+  --color-mx-violet-90: oklch(0.4654 0.196 323.5); /* #8A1D96 */
+
+  /* 
+   * end
+   */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -49,7 +64,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.4654 0.196 323.5); /* #8A1D96 */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -83,7 +98,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.4654 0.196 323.5); /* #8A1D96 */
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -116,5 +131,7 @@
   }
   body {
     @apply bg-background text-foreground;
+
+    font-family: var(--font-nunito);
   }
 }
