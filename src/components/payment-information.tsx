@@ -38,10 +38,7 @@ type FormData = z.infer<typeof formSchema>;
 export function PaymentInformation({ initialData, onSubmit }: Props) {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      ...initialData,
-      agreeToCancellationPolicy: false,
-    },
+    defaultValues: initialData,
   });
 
   const handleSubmit = (data: FormData) => {
